@@ -1,0 +1,25 @@
+{
+    "name": "PDF Direct Translation",
+    "description": "改行入りの英文を翻訳サービスへリダイレクト",
+    "version": "0.0.0",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "contextMenus"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "./js/background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["./js/content.js"]
+        }
+    ],
+    "options_page": "./pages/options.html"
+        
+}
