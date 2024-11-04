@@ -10,7 +10,6 @@ const contextMenusDictionary = {
 };
  */
 
-
 // インストール時の操作
 chrome.runtime.onInstalled.addListener( () => {
 
@@ -20,30 +19,9 @@ chrome.runtime.onInstalled.addListener( () => {
         "title": "(PDT) 選択された文字列を DeepL で翻訳する",
         "contexts": ["selection"]
     });
-
-    // デフォルトの言語設定
-    // chrome.storage.sync.set( { 'targetLanguage': 'ja' });
 });
 
 
-/*
-chrome.contextMenus.create({
-    "id": "PDT-extension",
-    "title": "(PDT) 選択された文字列を DeepL で翻訳する",
-    "contexts": ["selection"]
-});
- */
-
-
-
-// Get setting of target Language
-/*
-document.getElementById('DOMContentLoaded', () => {
-    chrome.storage.sync.get( 'targetLanguage', (data) => {
-        console.log( `Target language: ${data}`);
-    } )
-});
- */
 
 chrome.contextMenus.onClicked.addListener( function(info, tab) {
     if (info.menuItemId === "PDT-extension") {
@@ -54,7 +32,6 @@ chrome.contextMenus.onClicked.addListener( function(info, tab) {
         // 選択された文字列に / が含まれていたら ／ へと置き換える
         let convertedText = selectedText.replace(/\//g, "／");
         console.log(convertedText);
-
 
         // target Lang を取り出す
         chrome.storage.sync.get( 'targetLanguage', (data) => {
@@ -78,5 +55,4 @@ chrome.contextMenus.onClicked.addListener( function(info, tab) {
          */
 
     }
-
 });

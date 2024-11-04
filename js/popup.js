@@ -1,4 +1,4 @@
-// popup.html の Options を押したときに別の tab で開くようにする
+// popup.html の Options を押したときに option.html を別の tab で開くようにする
 document.addEventListener('DOMContentLoaded', () => {
     const optionLink = document.getElementById('option-link');
     optionLink.addEventListener('click', () => {

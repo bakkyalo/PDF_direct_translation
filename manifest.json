@@ -1,7 +1,7 @@
 {
     "name": "PDF Direct Translation",
     "description": "改行入りの英文を翻訳サービスへリダイレクト",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "manifest_version": 3,
     "permissions": [
         "activeTab",
@@ -9,7 +9,7 @@
         "storage"
     ],
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "./pages/popup.html"
     },
     "background": {
         "service_worker": "./js/background.js",
